@@ -20,8 +20,7 @@ export const projects = [
     Technologies: [
       
     ],
-    Source: "https://github.com/KareemEhab/game-hub-frontend",
-    Demo: "https://game-hub-iti.netlify.app/",
+    
   },
   {
     ImageURL: "/assets/project-vscode.webp",
