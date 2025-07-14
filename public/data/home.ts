@@ -7,20 +7,18 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
 export const homeData = {
-  // To use your own photo, just place it in /public/assets and write the link as I did: eg: /assets/my_image.jpg
-  // Of course it's best to convert your image file type to webp for better performance on the web!
-  // The links are optional
   myImage: "/assets/WhatsApp Image 2025-06-22 at 17.04.14_e8e43668.jpg",
+
   contactInfo: [
     {
       Icon: IoMdMail,
       Label: "codexacademy50@gmail.com",
-      Link: "/contact", // This refers to the Contact page in the website, you can change it to whatever you like
+      Link: "/contact",
     },
     {
       Icon: FaLocationDot,
       Label: "Cairo, Maadi, Egypt",
-      Link: "https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594885,31.2584644,13z", // This is just a simple location of my city
+      Link: "https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594885,31.2584644,13z",
     },
     {
       Icon: FaPhoneAlt,
@@ -28,6 +26,7 @@ export const homeData = {
       Link: "tel:+201022075809",
     },
   ],
+
   education: [
     {
       Icon: FaGithub,
@@ -43,20 +42,6 @@ export const homeData = {
       Icon: FaInstagram,
       Label: "Instagram",
       Link: "https://www.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
-    },
-  ],
-  social: [
-    {
-      Icon: FaGithub,
-      Link: "https://sgithub.com/KareemEhab",
-    },
-    {
-      Icon: FaFacebook,
-      Link: "https://www.facebook.com/profile.php?id=61572621389592",
-    },
-    {
-      Icon: FaInstagram,
-      Link: "https://www.instasgram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
     },
   ],
 };
