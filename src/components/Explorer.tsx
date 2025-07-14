@@ -49,7 +49,7 @@ const Explorer = ({ onSelectPage }: Props) => {
         >
           {isOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}
           <Text userSelect="none" fontSize={13} fontWeight="bold">
-            PORTFOLIO
+            Mo3ti
           </Text>
         </HStack>
         {isOpen && (
