@@ -130,7 +130,7 @@ const Contact = () => {
                   />
                   <Input
                     name="subject"
-                    placeholder="عنوان الرسالة"
+                    placeholder="الموضوع"
                     value={values.subject}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -161,7 +161,7 @@ const Contact = () => {
                     loadingText="جار الإرسال..."
                     alignSelf="flex-start"
                   >
-                    إرسال 
+                    إرسال الرسالة
                   </Button>
                 </VStack>
               </Form>
