@@ -45,4 +45,4 @@ export const homeData = {
       Link: "https://www.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
     },
   ],
- };
+};
