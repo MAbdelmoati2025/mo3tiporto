@@ -13,7 +13,7 @@ const ToolBar = () => {
         left="50%"
         textAlign={"center"}
       >
-        Kareem Hamouda - Full Stack Developer
+        Mohamed Ahmed Abdelmoati - Embedded System
       </Text>
       <ToolBarRight />
     </HStack>
