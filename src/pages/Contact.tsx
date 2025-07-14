@@ -130,7 +130,7 @@ const Contact = () => {
                   />
                   <Input
                     name="subject"
-                    placeholder="عنdوان الرسالة"
+                    placeholder="عنوان الرسالة"
                     value={values.subject}
                     onChange={handleChange}
                     onBlur={handleBlur}
