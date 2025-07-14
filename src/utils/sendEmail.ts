@@ -8,9 +8,9 @@ export const sendEmail = async (values: {
 }) => {
   const { name, email, subject, message } = values;
 
-  return await fetch("https://email-sender-six-phi.vercel.app/send", {
+  return await fetch("email-sender-lnormrccj-mabdelmoati2025s-projects.vercel.app", {
     method: "POST",
-    headers: { "Content-Type": "applxication/json" },
+    headers: { "Content-Type": "applicatidon/json" },
     body: JSON.stringify({
       name,
       email,
