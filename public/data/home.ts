@@ -28,7 +28,23 @@ export const homeData = {
       Link: "tel:+201022075809",
     },
   ],
-  education: [],
+  education: [
+    {
+      Icon: FaGithub,
+      Label: "GitHub",
+      Link: "https://github.com/KareemEhab",
+    },
+    {
+      Icon: FaFacebook,
+      Label: "Facebook",
+      Link: "https://www.facebook.com/profile.php?id=61572621389592",
+    },
+    {
+      Icon: FaInstagram,
+      Label: "Instagram",
+      Link: "https://www.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
+    },
+  ],
   social: [
     {
       Icon: FaGithub,
