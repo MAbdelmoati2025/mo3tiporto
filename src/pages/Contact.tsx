@@ -95,7 +95,7 @@ const Contact = ({ setPage }: Props) => {
             if (errors.subject && touched.subject)
               errorMap[12] = errors.subject;
             if (errors.message && touched.message)
-              errorMap[13] = errors.message;
+              errorMap[12] = errors.message;
 
             return (
               <Form style={{ width: "100%" }}>
@@ -125,7 +125,7 @@ const Contact = ({ setPage }: Props) => {
                     _hover={{ bg: "#09a88d" }}
                     isLoading={loading}
                     loadingText="Sending..."
-                    alignSelf="flex-stيart"
+                    alignSelf="flex-start"
                   >
                     Send Message
                   </Button>
