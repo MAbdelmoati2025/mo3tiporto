@@ -14,12 +14,12 @@ export const homeData = {
   contactInfo: [
     {
       Icon: IoMdMail,
-      Label: "kareem.e.hamouda@gmail.com",
+      Label: "codexacademy50@gmail.com",
       Link: "/contact", // This refers to the Contact page in the website, you can change it to whatever you like
     },
     {
       Icon: FaLocationDot,
-      Label: "Cairo, Egypt",
+      Label: "Cairo, Maadi, Egypt",
       Link: "https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594885,31.2584644,13z", // This is just a simple location of my city
     },
     {
