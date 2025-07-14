@@ -27,6 +27,6 @@ export const contactInfo = [
   {
     icon: FaInstagram,
     label: "Instagram",
-    value: "https://www.instagram.com/mohamed.a.abdelmoati_7/",
+    value: "https://www.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
   },
 ];
