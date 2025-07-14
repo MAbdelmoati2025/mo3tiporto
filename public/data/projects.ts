@@ -23,12 +23,9 @@ export const projects = [
     
   },
   {
-    ImageURL: "/assets/project-vscode.webp",
-    Title: "VSCode Themed Portfolio",
-    Description: "My personal portfolio with the Visual Studio Code IDE theme.",
-    Technologies: ["react", "typescript", "chakra-ui", "responsive"],
-    Source: "https://github.com/KareemEhab/VSCode-Themed-Portfolio",
-    Demo: "https://vs-code-themed-portfolio-theta.vercel.app/",
+    
+    Technologies: [],
+    
   },
   {
     
