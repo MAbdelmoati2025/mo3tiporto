@@ -1,6 +1,6 @@
 import { SimpleGrid, keyframes } from "@chakra-ui/react";
 import { useEffect } from "react";
-import Project from "../components/Projects/Project";
+import Project from "../components/projects/Project";
 import { projects } from "../../public/data/projects";
 
 interface Props {
