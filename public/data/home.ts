@@ -50,7 +50,7 @@ export const homeData = {
 social: [
   {
       Icon: FaTiktok,
-      Label: "k You",
+      Label: "Thak You",
     },
   ],
 };
