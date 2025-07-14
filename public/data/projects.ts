@@ -8,14 +8,10 @@ export const projects = [
     Description:
       "This project is a smart garage door automation system built using Arduino and an ultrasonic sensor. When a car approaches the garage within a certain distance, the ultrasonic sensor detects its presence. The Arduino then activates a servo motor or motor driver to open the garage door. After a short delay (allowing the car to enter), the door automatically closes.This system increases convenience, enhances security, and reduces manual effort, making it ideal for smart home applications.",
     Technologies: [
-      "react",
-      "javascript",
-      "tailwind",
-      "redux toolkit",
-      "responsive",
-      "node",
-      "express",
-      "mongodb",
+      "C / C++ (Arduino Language)",
+      "Arduino IDE",
+      "Ultrasonic Sensor HC-SR04	",
+      
     ],
     Source: "https://github.com/KareemEhab/Eshterely-Frontend", // Optional!
     Demo: "https://eshtrely.netlify.app/", // Optional!
