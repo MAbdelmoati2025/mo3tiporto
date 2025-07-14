@@ -16,9 +16,7 @@ export const projects = [
     Source: "https://www.instagram.com/p/DLVxAevNm70/", // Optional!
   },
   {
-    Title: "Game Hub",
-    Description:
-      "A full-stack e-commerce platform for buying and viewing games",
+    
     Technologies: [
       "angular",
       "typescript",
