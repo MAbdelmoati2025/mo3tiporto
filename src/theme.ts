@@ -21,7 +21,7 @@ const theme = extendTheme({
       900: "#1F2428", // VSCode Dark - darker panels
     },
     syntax: {
-      keyword: "#569CD6",
+      keyword: "#fffffff",
       variable: "#9CDCFE",
       string: "#CE9178",
       function: "#DCDCAA",
@@ -92,8 +92,8 @@ const theme = extendTheme({
         _dark: "gray.900", // VS Code panel
       },
       "sidebar-bg": {
-        default: "#ffffff", // Night Owl sidebar
-        _dark: "gray.70", // VS Code sidebar
+        default: "#0D293E", // Night Owl sidebar
+        _dark: "gray.700", // VS Code sidebar
       },
     },
   },
