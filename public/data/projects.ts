@@ -11,10 +11,10 @@ export const projects = [
       "C / C++ (Arduino Language)",
       "Arduino IDE",
       "Ultrasonic Sensor HC-SR04	",
-      
+    
     ],
-    Source: "https://github.com/KareemEhab/Eshterely-Frontend", // Optional!
-    Demo: "https://eshtrely.netlify.app/", // Optional!
+    Source: "https://www.instagram.com/p/DLVxAevNm70/", // Optional!
+    
   },
   {
     ImageURL: "/assets/project-gamehub.webp",
