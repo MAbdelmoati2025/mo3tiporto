@@ -89,7 +89,7 @@ const Home = ({ setPage }: Props) => {
             color={accentColor}
             mb={{ base: 6, md: 10 }}
           >
-            Embedded System
+            Code The Future
           </Text>
         </Box>
 
