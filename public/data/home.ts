@@ -46,8 +46,5 @@ export const homeData = {
     },
   ],
 social: [
-    
-    
-    
   ],
 };
