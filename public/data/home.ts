@@ -19,7 +19,7 @@ export const homeData = {
     },
     {
       Icon: FaLocationDot,
-      Label: "Cairo, Egypt",
+      Label: "Cairo, Maadi, Egypt",
       Link: "https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594885,31.2584644,13z", // This is just a simple location of my city
     },
     {
