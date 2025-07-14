@@ -29,7 +29,7 @@ const Project = ({
   const textColor = useColorModeValue("nightOwl.text", "whiteAlpha.900");
   const secondaryText = useColorModeValue("gray.400", "gray.300");
   const borderColor = useColorModeValue(
-    "rgba(16, 87, 194, 0.3)",
+    "rgba(125, 87, 194, 0.3)",
     "rgba(86, 156, 214, 0.3)"
   );
   const accentColor = useColorModeValue("syntax.keyword", "#0BCEAF");
