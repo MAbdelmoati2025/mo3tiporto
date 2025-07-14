@@ -29,7 +29,7 @@ export const homeData = {
     },
   ],
 
-  social: [
+social: [
     {
       Icon: FaGithub,
       Label: "GitHub",
