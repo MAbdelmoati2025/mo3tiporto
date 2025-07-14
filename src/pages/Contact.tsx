@@ -10,13 +10,14 @@ import {
   HStack,
   Input,
   Textarea,
+  Link,
 } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import { useState } from "react";
 import { validationSchema, FormValues } from "../utils/validation";
 import { sendEmail } from "../utils/sendEmail";
 import { IoMdMail } from "react-icons/io";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
 const Contact = () => {
@@ -86,6 +87,19 @@ const Contact = () => {
               <Text>Maadi, Cairo, Egypt</Text>
             </HStack>
           </SimpleGrid>
+
+          {/* Social Media */}
+          <HStack mt={6} spacing={4}>
+            <Link href="https://facebook.com/codex" isExternal>
+              <Icon as={FaFacebook} w={6} h={6} color="blue.400" />
+            </Link>
+            <Link href="https://instagram.com/codex" isExternal>
+              <Icon as={FaInstagram} w={6} h={6} color="pink.400" />
+            </Link>
+            <Link href="https://tiktok.com/@codex" isExternal>
+              <Icon as={FaTiktok} w={6} h={6} color="white" />
+            </Link>
+          </HStack>
         </Box>
 
         {/* Contact Form */}
