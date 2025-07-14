@@ -29,7 +29,7 @@ const Footer = () => {
             Content="Mo3ti"
             TooltipLabel=""
           />
-          <FooterButton Icon={VscCheck} Content="Prettier" TooltipLabel="" />
+          <FooterButton Icon={VscCheck} Content="Mo'men" TooltipLabel="" />
           <FooterButton Icon={VscBell} Content="" TooltipLabel="" />
         </Box>
       </HStack>
