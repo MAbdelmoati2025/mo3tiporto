@@ -37,7 +37,12 @@ export const homeData = {
     {
       Icon: FaInstagram,
       Label: "Instagram",
-      Link: "https://ؤwww.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
+      Link: "https://www.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
+    },
+    {
+      Icon: FaTiktok,
+      Label: "TikTok",
+      Link: "https://www.tiktok.com/@codexacademy1?_t=ZS-8xVhNzXXq6R&_r=1",
     },
   ],
 social: [
