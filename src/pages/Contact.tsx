@@ -26,21 +26,14 @@ const Contact = () => {
   const initialValues: FormValues = {
     name: "",
     email: "",
+    subject: "",
     message: "",
   };
 
   const handleSubmit = async (values: FormValues, { resetForm }: any) => {
     setLoading(true);
     try {
-      const payload = {
-        ...values,
-        subject: "codex client", // الموضوع ثابت
-      };
-
-      console.log("Sending:", payload); // علشان تتأكد في الكونسول
-
-      const result = await sendEmail(payload);
-
+      const result = await sendEmail(values);
       if (result.status === 200) {
         toast({
           title: "تم الإرسال",
@@ -128,6 +121,17 @@ const Contact = () => {
                     name="email"
                     placeholder="الإيميل بتاعك"
                     value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    bg="gray.800"
+                    border="1px solid"
+                    borderColor="gray.700"
+                    _focus={{ borderColor: "#0BCEAF" }}
+                  />
+                  <Input
+                    name="subject"
+                    placeholder="عنوان الرسالة"
+                    value={values.subject}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     bg="gray.800"
