@@ -72,7 +72,7 @@ const Contact = ({ setPage }: Props) => {
   }, [messageLines]);
 
   return (
-    <Box minH="100vh" p={{ base: 4, md: 10 }} bg="gray.900" color="white">
+    <Box minH="100vh" p={{ base: 4, md: 2 }} bg="gray.900" color="white">
       <VStack spacing={8} align="start" maxW="800px" mx="auto">
         <Box>
           <Heading fontSize="3xl" color="#0BCEAF">
@@ -95,7 +95,7 @@ const Contact = ({ setPage }: Props) => {
             if (errors.subject && touched.subject)
               errorMap[12] = errors.subject;
             if (errors.message && touched.message)
-              errorMap[10] = errors.message;
+              errorMap[13] = errors.message;
 
             return (
               <Form style={{ width: "100%" }}>
