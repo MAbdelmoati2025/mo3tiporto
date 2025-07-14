@@ -1,7 +1,6 @@
 export const aboutMe = {
   description: [
-    "A Full Stack Developer (MERN) with a degree in Computer Science (Information Systems) from Ain Shams University and 9 months of professional training at Information Technology Institute (ITI) in Web & UI Development.",
-    "Experienced in leadership, teaching, and mentoring, having served as a military reserve officer with a background in web development. Skilled in front-end and back-end development, as well as UI/UX design, and can deliver results under pressure. Passionate about building scalable web applications and contributing to innovative projects.",
+    "Senior Communication and Electronics Engineering Student ",
   ],
   cvPath: "/assets/CV.pdf", // Upload your own CV in /public/assets as CV.pdf
   cvFileNameAfterDownload: "Kareem Hamouda CV.pdf", // This is what the name of the file is going to be when downloaded
