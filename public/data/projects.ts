@@ -41,9 +41,5 @@ export const projects = [
     ],
 
   },
-  {
-   
-    Technologies: [],
   
-  },
 ];
