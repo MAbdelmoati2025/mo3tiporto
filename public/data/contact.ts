@@ -20,7 +20,6 @@ export const contactInfo = [
     value: "+20 1022075809",
   },
   {
-    icon: FaGithub,
 
   },
   {
