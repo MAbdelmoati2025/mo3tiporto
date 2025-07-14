@@ -1,48 +1,65 @@
 import { IoMdMail } from "react-icons/io";
-import { FaLocationDot, FaGraduationCap, FaTiktok } from "react-icons/fa6";
-import {
-  FaPhoneAlt,
-  FaGithub,
-  FaLinkedin,
-  FaFacebook,
-  FaInstagram,
-  FaUniversity,
-} from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaUniversity } from "react-icons/fa";
+import { FaGraduationCap } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export const homeData = {
-  myImage: "/assets/WhatsApp Image 2025-06-22 at 17.04.14_e8e43668.jpg",
+  // To use your own photo, just place it in /public/assets and write the link as I did: eg: /assets/my_image.jpg
+  // Of course it's best to convert your image file type to webp for better performance on the web!
+  // The links are optional
+  myImage: "/assets/my_image.webp",
   contactInfo: [
     {
       Icon: IoMdMail,
-      Label: "codexacademy50@gmail.com",
-      Link: "/contact",
+      Label: "kareem.e.hamouda@gmail.com",
+      Link: "/contact", // This refers to the Contact page in the website, you can change it to whatever you like
     },
     {
       Icon: FaLocationDot,
-      Label: "Cairo, Maadi, Egypt",
-      Link: "https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594885,31.2584644,13z",
+      Label: "Cairo, Egypt",
+      Link: "https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594885,31.2584644,13z", // This is just a simple location of my city
     },
     {
       Icon: FaPhoneAlt,
-      Label: "+201022075809",
-      Link: "tel:+201022075809",
+      Label: "+20 115 111 9085",
+      Link: "tel:+201151119085",
+    },
+  ],
+  education: [
+    {
+      Icon: FaUniversity,
+      Label: "Ain Shams University",
+      Link: "https://www.asu.edu.eg/",
+    },
+    {
+      Icon: FaGraduationCap,
+      Label: "Bachelor's Degree in Computer Science",
+      Link: "https://cis.asu.edu.eg/",
     },
   ],
   social: [
     {
-      Icon: FaTiktok,
-      Label: "TikTok",
-      Link: "https://www.tiktok.com/@codexacademy1?_t=ZS-8xVhNzXXq6R&_r=1",
+      Icon: FaGithub,
+      Label: "GitHub",
+      Link: "https://github.com/KareemEhab",
+    },
+    {
+      Icon: FaLinkedin,
+      Label: "LinkedIn",
+      Link: "https://www.linkedin.com/in/kareem-hamouda/",
     },
     {
       Icon: FaFacebook,
       Label: "Facebook",
-      Link: "https://www.facebook.com/profile.php?id=61572621389592",
+      Link: "https://www.facebook.com/kareem.ehab.37",
     },
     {
       Icon: FaInstagram,
       Label: "Instagram",
-      Link: "https://www.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
+      Link: "https://www.instagram.com/kareem.ehabz/",
     },
   ],
 };
