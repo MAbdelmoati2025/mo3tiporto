@@ -47,6 +47,7 @@ export const homeData = {
   ],
   social: [
     {
+      Icon: ,
     },
     {
       Icon: FaFacebook,
