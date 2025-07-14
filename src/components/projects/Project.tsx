@@ -7,6 +7,7 @@ import {
   Link,
   useColorModeValue,
   Box,
+  HStack,
 } from "@chakra-ui/react";
 import ProjectTech from "./ProjectTech";
 
@@ -27,52 +28,47 @@ const Project = ({
   Source,
   Demo,
 }: Props) => {
-  const cardBg = useColorModeValue("rgba(1, 22, 39, 0.8)", "gray.900");
-  const textColor = useColorModeValue("nightOwl.text", "whiteAlpha.900");
-  const secondaryText = useColorModeValue("gray.400", "gray.300");
-  const borderColor = useColorModeValue(
-    "rgba(126, 87, 194, 0.3)",
-    "rgba(86, 156, 214, 0.3)"
-  );
-  const accentColor = useColorModeValue("syntax.keyword", "#0BCEAF");
-  const techBorderColor = useColorModeValue("purple.500", "#0BCEAF");
+  const cardBg = useColorModeValue("white", "gray.800");
+  const textColor = useColorModeValue("gray.800", "whiteAlpha.900");
+  const secondaryText = useColorModeValue("gray.600", "gray.300");
+  const borderColor = useColorModeValue("gray.200", "gray.700");
+  const accentColor = useColorModeValue("blue.500", "#0BCEAF");
+  const techBorderColor = useColorModeValue("blue.500", "#0BCEAF");
 
   return (
-    <Box width="100vw" px={4}> {/* ✅ ياخد عرض الشاشة بالكامل */}
+    <Box width="100vw" px={[4, 10]} py={6}>
       <VStack
         bg={cardBg}
-        borderRadius="10px"
+        borderRadius="2xl"
         width="100%"
         maxW="100%"
         height="100%"
         border="1px solid"
         borderColor={borderColor}
-        transition="all 0.3s ease"
+        overflow="hidden"
+        boxShadow="lg"
+        transition="transform 0.3s ease, box-shadow 0.3s ease"
         _hover={{
-          transform: "translateY(-5px)",
-          boxShadow: useColorModeValue(
-            "0 10px 20px rgba(126, 87, 194, 0.2)",
-            "0 10px 20px rgba(86, 156, 214, 0.2)"
-          ),
+          transform: "scale(1.01)",
+          boxShadow: "xl",
         }}
       >
         <Image
           width="100%"
+          height={["200px", "300px"]}
+          objectFit="cover"
           src={ImageURL}
           alt={`${Title} project image`}
-          borderTopRadius="10px"
-          borderBottom="1px solid"
-          borderBottomColor={borderColor}
         />
-        <VStack align="left" width="100%" padding={5} height="100%" spacing={3}>
-          <Text fontWeight="bold" fontSize="lg" color={textColor}>
+        <VStack align="start" width="100%" padding={6} spacing={4}>
+          <Text fontWeight="bold" fontSize="2xl" color={textColor}>
             {Title}
           </Text>
-          <Text color={secondaryText} fontSize="sm">
+          <Text color={secondaryText} fontSize="md">
             {Description}
           </Text>
 
-          <Wrap spacing={2} marginY={2}>
+          <Wrap spacing={2} marginTop={2}>
             {Technologies.map((t) => (
               <WrapItem key={t}>
                 <ProjectTech
@@ -85,7 +81,7 @@ const Project = ({
           </Wrap>
 
           {(Source || Demo) && (
-            <Wrap spacing={4} marginTop="auto">
+            <HStack spacing={4} pt={3}>
               {Source && (
                 <Link
                   href={Source}
@@ -93,10 +89,10 @@ const Project = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   fontSize="sm"
-                  fontWeight="semibold"
+                  fontWeight="bold"
                   _hover={{ textDecoration: "underline" }}
                 >
-                  Source
+                  🔗 Source Code
                 </Link>
               )}
               {Demo && (
@@ -106,13 +102,13 @@ const Project = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   fontSize="sm"
-                  fontWeight="semibold"
+                  fontWeight="bold"
                   _hover={{ textDecoration: "underline" }}
                 >
-                  Demo
+                  🚀 Live Demo
                 </Link>
               )}
-            </Wrap>
+            </HStack>
           )}
         </VStack>
       </VStack>
