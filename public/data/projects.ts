@@ -4,9 +4,9 @@ export const projects = [
     // Of course it's best to convert your image file type to webp for better performance on the web!
     // Or just use a cloud image hosting platform like cloudinary and use the image url from there.
     ImageURL: "/assets/project-eshterely.webp", //
-    Title: "Eshterely",
+    Title: "Smart Garage System",
     Description:
-      "A full-stack modern e-commerce platform for high-end audio and visual equipment.",
+      "This project is a smart garage door automation system built using Arduino and an ultrasonic sensor. When a car approaches the garage within a certain distance, the ultrasonic sensor detects its presence. The Arduino then activates a servo motor or motor driver to open the garage door. After a short delay (allowing the car to enter), the door automatically closes.This system increases convenience, enhances security, and reduces manual effort, making it ideal for smart home applications.",
     Technologies: [
       "react",
       "javascript",
