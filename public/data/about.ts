@@ -9,17 +9,7 @@ export const aboutMe = {
 export const technicalSkills: Record<string, string[]> = {
   // You can rename the type of skills, it's dynamically rendered. eg: You can change "Programming Languages" -> to just "Languages"
   "Programming Languages": ["arduino", "Python", "Web", "C++"],
-  "Frontend Development": [
-    "React",
-    "Next.js",
-    "Angular",
-    "HTML5",
-    "CSS3",
-    "Bootstrap",
-    "Tailwind",
-    "Chakra UI",
-    "Redux Toolkit",
-  ],
+  
   "Backend Development": [
     "Node.js",
     "Express.js",
