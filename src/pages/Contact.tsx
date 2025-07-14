@@ -23,19 +23,23 @@ const Contact = () => {
   const toast = useToast();
   const [loading, setLoading] = useState(false);
 
-  const initialValues = {
+  const initialValues: FormValues = {
     name: "",
     email: "",
     message: "",
   };
 
-  const handleSubmit = async (values: any, { resetForm }: any) => {
+  const handleSubmit = async (values: FormValues, { resetForm }: any) => {
     setLoading(true);
     try {
-      const result = await sendEmail({
+      const payload = {
         ...values,
-        subject: "codex", // هنا بنبعت subject ثابت
-      });
+        subject: "codex client", // الموضوع ثابت
+      };
+
+      console.log("Sending:", payload); // علشان تتأكد في الكونسول
+
+      const result = await sendEmail(payload);
 
       if (result.status === 200) {
         toast({
@@ -63,7 +67,7 @@ const Contact = () => {
   return (
     <Box minH="100vh" p={{ base: 4, md: 10 }} bg="gray.900" color="white">
       <VStack spacing={10} align="start" maxW="800px" mx="auto">
-        {/* Contact Info */}
+        {/* Contact Info Card */}
         <Box
           bg="gray.800"
           p={6}
@@ -150,7 +154,7 @@ const Contact = () => {
                     color="white"
                     _hover={{ bg: "#09a88d" }}
                     isLoading={loading}
-                    loadingText="جار الإرسال...."
+                    loadingText="جار الإرسال..."
                     alignSelf="flex-start"
                   >
                     إرسال الرسالة
