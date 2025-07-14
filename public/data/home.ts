@@ -44,8 +44,9 @@ export const homeData = {
     {
       Icon: FaTiktok,
       Label: "TikTok",
-      Link: "https://www.tiktok.com/@codيexacademy1?_t=ZS-8xVhNzXXq6R&_r=1",
+      Link: "https://www.tiktok.com/@codexبacademy1?_t=ZS-8xVhNzXXq6R&_r=1",
     },
   ],
-
+social: [
+  ],
 };
