@@ -5,6 +5,8 @@ import {
   HStack,
   VStack,
   useBreakpointValue,
+  Heading,
+  Text,
 } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import { useState, useEffect } from "react";
@@ -41,7 +43,7 @@ const Contact = ({ setPage }: Props) => {
     setLoading(true);
     try {
       const result = await sendEmail(values);
-      if (result.status === 200)
+      if (result.status === 200) {
         toast({
           title: "Message Sent",
           description: "Your message has been sent successfully!",
@@ -49,9 +51,9 @@ const Contact = ({ setPage }: Props) => {
           duration: 3000,
           isClosable: true,
         });
-
-      resetForm();
-      setMessageLines(1);
+        resetForm();
+        setMessageLines(1);
+      }
     } catch (error) {
       toast({
         title: "Error Sending Message",
@@ -70,14 +72,17 @@ const Contact = ({ setPage }: Props) => {
   }, [messageLines]);
 
   return (
-    <Box minHeight="100%" width="100%">
-      <Box
-        w="full"
-        borderRadius="md"
-        fontFamily="monospace"
-        overflowX="hidden"
-        pr="1rem"
-      >
+    <Box minH="100vh" p={{ base: 4, md: 10 }} bg="gray.900" color="white">
+      <VStack spacing={8} align="start" maxW="800px" mx="auto">
+        <Box>
+          <Heading fontSize="3xl" color="#0BCEAF">
+            Let's Get in Touch
+          </Heading>
+          <Text fontSize="md" mt={2} color="gray.400">
+            Feel free to drop me a message below.
+          </Text>
+        </Box>
+
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -93,48 +98,34 @@ const Contact = ({ setPage }: Props) => {
               errorMap[13] = errors.message;
 
             return (
-              <Form>
-                <VStack
-                  align="flex-start"
-                  w="full"
-                  justify={{ md: "space-between" }}
-                >
-                  <HStack
-                    align="flex-start"
-                    spacing={2}
-                    w="full"
-                    overflowX={isMobile ? "auto" : "visible"}
-                  >
+              <Form style={{ width: "100%" }}>
+                <VStack spacing={6} align="stretch">
+                  <ContactDetails />
+
+                  <HStack align="flex-start" spacing={4} w="full">
                     <ContactCodeLines
                       totalLines={totalLines}
                       errorLines={Object.keys(errorMap).map(Number)}
                       errorMessages={errorMap}
                     />
 
-                    <VStack
-                      align="stretch"
-                      w="full"
-                      minW={isMobile ? "300px" : "auto"}
-                    >
-                      <ContactDetails />
-                      <ContactForm
-                        values={values}
-                        handleChange={handleChange}
-                        handleBlur={handleBlur}
-                        setMessageLines={setMessageLines}
-                      />
-                    </VStack>
+                    <ContactForm
+                      values={values}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                      setMessageLines={setMessageLines}
+                    />
                   </HStack>
 
                   <Button
                     type="submit"
+                    size="lg"
                     bg="#0BCEAF"
                     color="white"
                     _hover={{ bg: "#09a88d" }}
-                    mt={4}
-                    ml={4}
                     isLoading={loading}
                     loadingText="Sending..."
+                    alignSelf="flex-start"
                   >
                     Send Message
                   </Button>
@@ -143,7 +134,7 @@ const Contact = ({ setPage }: Props) => {
             );
           }}
         </Formik>
-      </Box>
+      </VStack>
     </Box>
   );
 };
