@@ -81,7 +81,7 @@ const Home = ({ setPage }: Props) => {
             letterSpacing="wide"
             color={headingColor}
           >
-            KAREEM HAMOUDA
+            Mohamed Ahmed Abdelmoati
           </Text>
           <Text
             fontSize={{ base: "lg", md: "xl" }}
