@@ -15,18 +15,7 @@ export const projects = [
     ],
     Source: "https://www.instagram.com/p/DLVxAevNm70/", // Optional!
   },
-  {
-    
-    Technologies: [
-      
-    ],
-    
-  },
-  {
-    
-    Technologies: [],
-    
-  },
+  
   
   
   
