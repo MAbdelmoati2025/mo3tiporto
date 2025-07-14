@@ -30,8 +30,6 @@ export const homeData = {
   ],
   education: [
     {
-    },
-    {
       Icon: FaFacebook,
       Label: "Facebook",
       Link: "https://www.facebook.com/profile.php?id=61572621389592",
