@@ -90,13 +90,13 @@ const Contact = () => {
 
           {/* Social Media */}
           <HStack mt={6} spacing={4}>
-            <Link href="https://facebook.com/codex" isExternal>
+            <Link href="https://www.facebook.com/profile.php?id=61572621389592" isExternal>
               <Icon as={FaFacebook} w={6} h={6} color="blue.400" />
             </Link>
-            <Link href="https://instagram.com/codex" isExternal>
+            <Link href="https://www.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3" isExternal>
               <Icon as={FaInstagram} w={6} h={6} color="pink.400" />
             </Link>
-            <Link href="https://tiktok.com/@codex" isExternal>
+            <Link href="https://www.tiktok.com/@codexacademy1?_t=ZS-8xVhNzXXq6R&_r=1" isExternal>
               <Icon as={FaTiktok} w={6} h={6} color="white" />
             </Link>
           </HStack>
