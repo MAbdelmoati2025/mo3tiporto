@@ -7,40 +7,36 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-export const receiver_email = "kareem.e.a.hamouda@gmail.com"; // Your email for recieving emails using the email service.
-// The emails are sent using a personally developed email api: https://github.com/KareemEhab/email-sender
-// Feel free to clone the email service as well and deploy your own, you'll find all the steps in the README there.
-// Make sure to update /src/utils/sendEmail.ts with your own deployed link.
-
+export const receiver_email = "mohamed.a.abdelmoati2020@gmail.com"; 
 export const contactInfo = [
   {
     icon: FaPhoneAlt,
     label: "Phone",
-    value: "+20 115 111 9085",
+    value: "+20 14884327",
   },
   {
     icon: FaWhatsapp,
     label: "WhatsApp",
-    value: "+20 115 111 9085",
+    value: "+20 14884327",
   },
   {
     icon: FaGithub,
     label: "GitHub",
-    value: "github.com/KareemEhab",
+    value: "https://github.com/MAbdelmoati2025",
   },
   {
     icon: FaLinkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/kareem-hamouda",
+    value: "https://www.linkedin.com/in/mohamed-a-abdelmoati-229688299",
   },
   {
     icon: FaFacebook,
     label: "Facebook",
-    value: "facebook.com/kareem.ehab.37",
+    value: "https://www.facebook.com/MohamedAhmedAbdelmoati1752002/",
   },
   {
     icon: FaInstagram,
     label: "Instagram",
-    value: "instagram.com/kareem.ehabz",
+    value: "https://www.instagram.com/mohamed.a.abdelmoati_7/",
   },
 ];
