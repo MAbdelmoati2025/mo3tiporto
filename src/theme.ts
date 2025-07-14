@@ -92,7 +92,7 @@ const theme = extendTheme({
         _dark: "gray.900", // VS Code panel
       },
       "sidebar-bg": {
-        default: "#0D913E", // Night Owl sidebar
+        default: "#ffffff", // Night Owl sidebar
         _dark: "gray.70", // VS Code sidebar
       },
     },
