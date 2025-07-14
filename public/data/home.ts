@@ -1,54 +1,64 @@
 import { IoMdMail } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
-import {
-  FaPhoneAlt,
-  FaGithub,
-  FaLinkedin,
-  FaFacebook,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaPhoneAlt, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaUniversity } from "react-icons/fa";
+import { FaGraduationCap } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export const homeData = {
-  myImage: "/assets/WhatsApp Image 2025-06-22 at 17.04.14_e8e43668.jpg",
-  
-  contactInfo: [
+  // To use your own photo, just place it in /public/assets and write the link as I did: eg: /assets/my_image.jpg
+  // Of course it's best to convert your image file type to webp for better performance on the web!
+  // The links are optional
+z  contactInfo: [
     {
       Icon: IoMdMail,
-      Label: "codexacademy50@gmail.com",
-      Link: "/contact",
+      Label: "Mohamed.a.abdelmoati2020@gmail.com",
+      Link: "/contact", // This refers to the Contact page in the website, you can change it to whatever you like
     },
     {
       Icon: FaLocationDot,
-      Label: "Cairo, Maadi, Egypt",
-      Link: "https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594885,31.2584644,13z",
+      Label: "Cairo, Egypt",
+      Link: "https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594885,31.2584644,13z", // This is just a simple location of my city
     },
     {
       Icon: FaPhoneAlt,
-      Label: "+20 1022075809",  // ✅ التنصيص اتقفل هنا
-      Link: "tel:+201022075809",
+      Label: "+201014884327",
+      Link: "tel:+201014884327",
     },
   ],
-
+  education: [
+    {
+      Icon: FaUniversity,
+      Label: "Helwan  University",
+      Link: "https://www.asu.edu.eg/",
+    },
+    {
+      Icon: FaGraduationCap,
+      Label: "Bachelor's Degree in Engineering",
+      Link: "https://cis.asu.edu.eg/",
+    },
+  ],
   social: [
     {
       Icon: FaGithub,
       Label: "GitHub",
-      Link: "https://github.com/KareemEhab",
+      Link: "https://github.com/MAbdelmoati2025",
     },
     {
       Icon: FaLinkedin,
       Label: "LinkedIn",
-      Link: "https://www.linkedin.com/in/kareem-hamouda/",
+      Link: "https://www.linkedin.com/in/mohamed-a-abdelmoati-229688299",
     },
     {
       Icon: FaFacebook,
       Label: "Facebook",
-      Link: "https://www.facebook.com/kareem.ehab.37",
+      Link: "https://www.facebook.com/MohamedAhmedAbdelmoati1752002/",
     },
     {
       Icon: FaInstagram,
       Label: "Instagram",
-      Link: "https://www.instagram.com/kareem.ehabz/",
+      Link: "https://www.instagram.com/mohamed.a.abdelmoati_7/",
     },
   ],
 };
