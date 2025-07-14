@@ -31,21 +31,11 @@ export const projects = [
     Demo: "https://vs-code-themed-portfolio-theta.vercel.app/",
   },
   {
-    ImageURL: "/assets/project-kanban-task-management-app.webp",
-    Title: "Kanban Task Management App",
-    Description:
-      "A full-stack task management app to help you organize and manage your work more easily.",
+    
     Technologies: [
-      "node",
-      "express",
-      "react",
-      "mongodb",
-      "typescript",
-      "chakra-ui",
-      "responsive",
+      
     ],
-    Source: "https://github.com/KareemEhab/kanban-task-management-app",
-    Demo: "https://kanban-task-management-app-jet.vercel.app/",
+    
   },
   {
     
