@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   useToast,
-  HStack,
   VStack,
   useBreakpointValue,
   Heading,
@@ -14,7 +13,6 @@ import { validationSchema, FormValues } from "../utils/validation";
 import { sendEmail } from "../utils/sendEmail";
 
 import ContactDetails from "../components/Contact/ContactDetails";
-import ContactCodeLines from "../components/Contact/ContactCodeLines";
 import ContactForm from "../components/Contact/ContactForm";
 
 interface Props {
@@ -27,9 +25,7 @@ const Contact = ({ setPage }: Props) => {
   }, []);
 
   const toast = useToast();
-  const [totalLines, setTotalLines] = useState(14);
   const [messageLines, setMessageLines] = useState(1);
-  const isMobile = useBreakpointValue({ base: true, md: false });
   const [loading, setLoading] = useState(false);
 
   const initialValues: FormValues = {
@@ -67,12 +63,8 @@ const Contact = ({ setPage }: Props) => {
     }
   };
 
-  useEffect(() => {
-    setTotalLines(13 + messageLines);
-  }, [messageLines]);
-
   return (
-    <Box minH="100vh" p={{ base: 4, md: 2 }} bg="gray.900" color="white">
+    <Box minH="100vh" p={{ base: 4, md: 10 }} bg="gray.900" color="white">
       <VStack spacing={8} align="start" maxW="800px" mx="auto">
         <Box>
           <Heading fontSize="3xl" color="#0BCEAF">
@@ -88,51 +80,31 @@ const Contact = ({ setPage }: Props) => {
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          {({ values, handleChange, handleBlur, errors, touched }) => {
-            const errorMap: Record<number, string> = {};
-            if (errors.name && touched.name) errorMap[10] = errors.name;
-            if (errors.email && touched.email) errorMap[11] = errors.email;
-            if (errors.subject && touched.subject)
-              errorMap[12] = errors.subject;
-            if (errors.message && touched.message)
-              errorMap[13] = errors.message;
-
-            return (
-              <Form style={{ width: "100%" }}>
-                <VStack spacing={6} align="stretch">
-                  <ContactDetails />
-
-                  <HStack align="flex-start" spacing={4} w="full">
-                    <ContactCodeLines
-                      totalLines={totalLines}
-                      errorLines={Object.keys(errorMap).map(Number)}
-                      errorMessages={errorMap}
-                    />
-
-                    <ContactForm
-                      values={values}
-                      handleChange={handleChange}
-                      handleBlur={handleBlur}
-                      setMessageLines={setMessageLines}
-                    />
-                  </HStack>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    bg="#0BCEAF"
-                    color="white"
-                    _hover={{ bg: "#09a88d" }}
-                    isLoading={loading}
-                    loadingText="Sending..."
-                    alignSelf="flex-start"
-                  >
-                    Send Message
-                  </Button>
-                </VStack>
-              </Form>
-            );
-          }}
+          {({ values, handleChange, handleBlur }) => (
+            <Form style={{ width: "100%" }}>
+              <VStack spacing={6} align="stretch">
+                <ContactDetails />
+                <ContactForm
+                  values={values}
+                  handleChange={handleChange}
+                  handleBlur={handleBlur}
+                  setMessageLines={setMessageLines}
+                />
+                <Button
+                  type="submit"
+                  size="lg"
+                  bg="#0BCEAF"
+                  color="white"
+                  _hover={{ bg: "#09a88d" }}
+                  isLoading={loading}
+                  loadingText="Sending..."
+                  alignSelf="flex-start"
+                >
+                  Send Message
+                </Button>
+              </VStack>
+            </Form>
+          )}
         </Formik>
       </VStack>
     </Box>
