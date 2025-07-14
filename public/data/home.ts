@@ -14,7 +14,7 @@ export const homeData = {
   contactInfo: [
     {
       Icon: IoMdMail,
-      Label: "kareem.e.hamouda@gmail.com",
+      Label: "Mohamed.a.abdelmoati2020@gmail.com",
       Link: "/contact", // This refers to the Contact page in the website, you can change it to whatever you like
     },
     {
@@ -24,19 +24,19 @@ export const homeData = {
     },
     {
       Icon: FaPhoneAlt,
-      Label: "+20 115 111 9085",
-      Link: "tel:+201151119085",
+      Label: "+201014884327",
+      Link: "tel:+201014884327",
     },
   ],
   education: [
     {
       Icon: FaUniversity,
-      Label: "Ain Shams University",
+      Label: "Helwan  University",
       Link: "https://www.asu.edu.eg/",
     },
     {
       Icon: FaGraduationCap,
-      Label: "Bachelor's Degree in Computer Science",
+      Label: "Bachelor's Degree in Engineering",
       Link: "https://cis.asu.edu.eg/",
     },
   ],
@@ -44,22 +44,22 @@ export const homeData = {
     {
       Icon: FaGithub,
       Label: "GitHub",
-      Link: "https://github.com/KareemEhab",
+      Link: "https://github.com/MAbdelmoati2025",
     },
     {
       Icon: FaLinkedin,
       Label: "LinkedIn",
-      Link: "https://www.linkedin.com/in/kareem-hamouda/",
+      Link: "https://www.linkedin.com/in/mohamed-a-abdelmoati-229688299",
     },
     {
       Icon: FaFacebook,
       Label: "Facebook",
-      Link: "https://www.facebook.com/kareem.ehab.37",
+      Link: "https://www.facebook.com/MohamedAhmedAbdelmoati1752002/",
     },
     {
       Icon: FaInstagram,
       Label: "Instagram",
-      Link: "https://www.instagram.com/kareem.ehabz/",
+      Link: "https://www.instagram.com/mohamed.a.abdelmoati_7/",
     },
   ],
 };
