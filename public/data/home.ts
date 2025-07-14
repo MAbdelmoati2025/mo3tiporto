@@ -14,7 +14,7 @@ export const homeData = {
   contactInfo: [
     {
       Icon: IoMdMail,
-      Label: "kareem.e.hamouda@gmail.com",
+      Label: "codexacademy50@gmail.com",
       Link: "/contact", // This refers to the Contact page in the website, you can change it to whatever you like
     },
     {
