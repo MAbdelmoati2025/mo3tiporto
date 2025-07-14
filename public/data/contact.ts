@@ -21,8 +21,7 @@ export const contactInfo = [
   },
   {
     icon: FaGithub,
-    label: "GitHub",
-    value: "https://github.com/MAbdelmoati2025",
+
   },
   {
     icon: FaLinkedin,
