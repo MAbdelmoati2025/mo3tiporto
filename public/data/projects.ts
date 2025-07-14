@@ -56,7 +56,7 @@ export const projects = [
   },
   {
    
-    Technologies: ["html", "css", "responsive"],
+    Technologies: ],
   
   },
 ];
