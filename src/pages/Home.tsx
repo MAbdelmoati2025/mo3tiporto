@@ -81,7 +81,7 @@ const Home = ({ setPage }: Props) => {
             letterSpacing="wide"
             color={headingColor}
           >
-            Mohamed Ahmed Abdelmoati
+            CodeX Academy
           </Text>
           <Text
             fontSize={{ base: "lg", md: "xl" }}
