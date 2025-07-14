@@ -48,6 +48,8 @@ export const homeData = {
     },
   ],
 social: [
+  {
   Label: "شكرا",
+  },
   ],
 };
