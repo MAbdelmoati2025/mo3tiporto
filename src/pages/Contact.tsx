@@ -93,9 +93,9 @@ const Contact = ({ setPage }: Props) => {
             if (errors.name && touched.name) errorMap[10] = errors.name;
             if (errors.email && touched.email) errorMap[11] = errors.email;
             if (errors.subject && touched.subject)
-              errorMap[12] = errors.subject;
+              errorMap[11] = errors.subject;
             if (errors.message && touched.message)
-              errorMap[12] = errors.message;
+              errorMap[13] = errors.message;
 
             return (
               <Form style={{ width: "100%" }}>
