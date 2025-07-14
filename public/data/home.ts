@@ -5,6 +5,7 @@ import { FaUniversity } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
 
 export const homeData = {
   // To use your own photo, just place it in /public/assets and write the link as I did: eg: /assets/my_image.jpg
@@ -39,7 +40,10 @@ export const homeData = {
       Label: "Instagram",
       Link: "https://www.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
     },
-  ],
-social: [
+    {
+      Icon: FaTiktok,
+      Label: "TikTok",
+      Link: "https://www.tiktok.com/@codexacademy1?_t=ZS-8xVhNzXXq6R&_r=1",
+    },
   ],
 };
