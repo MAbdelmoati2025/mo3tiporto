@@ -161,7 +161,7 @@ const Contact = () => {
                     loadingText="جار الإرسال..."
                     alignSelf="flex-start"
                   >
-                    إرسال الرسالة
+                    إرسال 
                   </Button>
                 </VStack>
               </Form>
