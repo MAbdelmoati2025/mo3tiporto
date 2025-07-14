@@ -7,7 +7,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-export const receiver_email = "mohamed.a.abdelmoati2020@gmail.com"; 
+export const receiver_email = "codexacademy50@gmail.com"; 
 export const contactInfo = [
   {
     icon: FaPhoneAlt,
