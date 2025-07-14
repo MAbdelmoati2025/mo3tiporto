@@ -11,7 +11,7 @@ const theme = extendTheme({
     gray: {
       50: "#f9f9f9",
       100: "#ededed",
-      200: "#d3d3d3",
+      200: "#d3d2d3",
       300: "#b3b3b3",
       400: "#a0a0a0",
       500: "#898989",
@@ -21,7 +21,7 @@ const theme = extendTheme({
       900: "#1F2428", // VSCode Dark - darker panels
     },
     syntax: {
-      keyword: "#fffffff",
+      keyword: "#569CD6",
       variable: "#9CDCFE",
       string: "#CE9178",
       function: "#DCDCAA",
