@@ -36,39 +36,38 @@ const Project = ({
   const techBorderColor = useColorModeValue("blue.500", "#0BCEAF");
 
   return (
-    <Box width="100vw" px={[4, 10]} py={6}>
+    <Box width="100%" maxW="400px" px={2} py={4}>
       <VStack
         bg={cardBg}
-        borderRadius="2xl"
+        borderRadius="xl"
         width="100%"
-        maxW="100%"
         height="100%"
         border="1px solid"
         borderColor={borderColor}
         overflow="hidden"
-        boxShadow="lg"
-        transition="transform 0.3s ease, box-shadow 0.3s ease"
+        boxShadow="md"
+        transition="all 0.3s ease"
         _hover={{
-          transform: "scale(1.01)",
-          boxShadow: "xl",
+          transform: "scale(1.02)",
+          boxShadow: "lg",
         }}
       >
         <Image
           width="100%"
-          height={["200px", "300px"]}
+          height="180px"
           objectFit="cover"
           src={ImageURL}
           alt={`${Title} project image`}
         />
-        <VStack align="start" width="100%" padding={6} spacing={4}>
-          <Text fontWeight="bold" fontSize="2xl" color={textColor}>
+        <VStack align="start" width="100%" padding={4} spacing={3}>
+          <Text fontWeight="bold" fontSize="xl" color={textColor}>
             {Title}
           </Text>
-          <Text color={secondaryText} fontSize="md">
+          <Text color={secondaryText} fontSize="sm">
             {Description}
           </Text>
 
-          <Wrap spacing={2} marginTop={2}>
+          <Wrap spacing={2}>
             {Technologies.map((t) => (
               <WrapItem key={t}>
                 <ProjectTech
@@ -81,7 +80,7 @@ const Project = ({
           </Wrap>
 
           {(Source || Demo) && (
-            <HStack spacing={4} pt={3}>
+            <HStack spacing={4} pt={2}>
               {Source && (
                 <Link
                   href={Source}
@@ -90,9 +89,8 @@ const Project = ({
                   rel="noopener noreferrer"
                   fontSize="sm"
                   fontWeight="bold"
-                  _hover={{ textDecoration: "underline" }}
                 >
-                  🔗 Source Code
+                  Source
                 </Link>
               )}
               {Demo && (
@@ -103,9 +101,8 @@ const Project = ({
                   rel="noopener noreferrer"
                   fontSize="sm"
                   fontWeight="bold"
-                  _hover={{ textDecoration: "underline" }}
                 >
-                  🚀 Live Demo
+                  Demo
                 </Link>
               )}
             </HStack>
