@@ -93,7 +93,7 @@ const Contact = ({ setPage }: Props) => {
             if (errors.name && touched.name) errorMap[10] = errors.name;
             if (errors.email && touched.email) errorMap[11] = errors.email;
             if (errors.subject && touched.subject)
-              errorMap[11] = errors.subject;
+              errorMap[10] = errors.subject;
             if (errors.message && touched.message)
               errorMap[13] = errors.message;
 
