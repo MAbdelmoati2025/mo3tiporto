@@ -28,7 +28,8 @@ export const homeData = {
       Link: "tel:+201022075809",
     },
   ],
-social: [
+d
+  social: [
     {
       Icon: FaGithub,
       Label: "GitHub",
