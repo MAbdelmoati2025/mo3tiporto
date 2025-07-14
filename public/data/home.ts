@@ -55,7 +55,6 @@ export const homeData = {
       Link: "https://www.facebook.com/profile.php?id=61572621389592",
     },
     {
-      Icon: FaInstagram,
       Link: "https://www.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
     },
   ],
