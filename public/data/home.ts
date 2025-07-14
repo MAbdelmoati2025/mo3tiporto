@@ -50,10 +50,7 @@ export const homeData = {
       Icon: FaGithub,
       Link: "https://sgithub.com/KareemEhab",
     },
-    {
-      Icon: FaFacebook,
-      Link: "https://www.facebook.com/profile.php?id=61572621389592",
-    },
+    
     
   ],
 };
