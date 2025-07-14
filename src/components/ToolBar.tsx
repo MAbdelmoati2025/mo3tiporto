@@ -13,7 +13,7 @@ const ToolBar = () => {
         left="50%"
         textAlign={"center"}
       >
-        Mohamed Ahmed Abdelmoati - Embedded System
+       CodeX Academy - Code The Future
       </Text>
       <ToolBarRight />
     </HStack>
