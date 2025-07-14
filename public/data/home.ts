@@ -34,11 +34,7 @@ export const homeData = {
       Label: "Ain Shams University",
       Link: "https://www.asu.edu.eg/",
     },
-    {
-      Icon: FaGraduationCap,
-      Label: "Bachelor's Degree in Computer Science",
-      Link: "https://cis.asu.edu.eg/",
-    },
+    
   ],
   social: [
     {
