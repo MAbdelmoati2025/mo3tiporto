@@ -34,12 +34,6 @@ export const projects = [
     ],
     
   },
-  {
-    
-    Technologies: [
-      
-    ],
-
-  },
+  
   
 ];
