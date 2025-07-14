@@ -47,19 +47,14 @@ export const homeData = {
       Link: "https://github.com/KareemEhab",
     },
     {
-      Icon: FaLinkedin,
-      Label: "LinkedIn",
-      Link: "https://www.linkedin.com/in/kareem-hamouda/",
-    },
-    {
       Icon: FaFacebook,
       Label: "Facebook",
-      Link: "https://www.facebook.com/kareem.ehab.37",
+      Link: "https://www.facebook.com/profile.php?id=61572621389592",
     },
     {
       Icon: FaInstagram,
       Label: "Instagram",
-      Link: "https://www.instagram.com/kareem.ehabz/",
+      Link: "https://www.instagram.com/codex__academy?igsh=bXByeWl4c3VuM3h3",
     },
   ],
 };
