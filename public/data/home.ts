@@ -47,7 +47,6 @@ export const homeData = {
   ],
   social: [
     {
-      Icon: FaGithub,
     },
     {
       Icon: FaFacebook,
