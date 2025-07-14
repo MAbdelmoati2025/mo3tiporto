@@ -12,7 +12,7 @@ export const contactInfo = [
   {
     icon: FaPhoneAlt,
     label: "Phone",
-    value: "+20 14884327",
+    value: "+20 1022075809",
   },
   {
     icon: FaWhatsapp,
