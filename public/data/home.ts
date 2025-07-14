@@ -22,7 +22,7 @@ export const homeData = {
     },
     {
       Icon: FaPhoneAlt,
-      Label: "+20 1022075809,
+      Label: "+20 1022075809",
       Link: "tel:+201022075809",
     },
   ],
