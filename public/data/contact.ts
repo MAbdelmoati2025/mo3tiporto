@@ -22,7 +22,7 @@ export const contactInfo = [
   {
     icon: FaFacebook,
     label: "Facebook",
-    value: "https://www.facebook.com/MohamedAhmedAbdelmoati1752002/",
+    value: "https://www.facebook.com/profile.php?id=61572621389592",
   },
   {
     icon: FaInstagram,
