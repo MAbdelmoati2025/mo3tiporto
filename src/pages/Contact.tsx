@@ -31,7 +31,7 @@ const Contact = ({ setPage }) => {
       {/* Header */}
       <div className="flex items-center justify-between p-6 border-b border-slate-700">
         <div className="flex items-center space-x-4">
-          <h1 className="text-2xl font-bold">contact.ts</h1>
+          <h1 className="text-2xl font-bold">contgact.ts</h1>
           <button 
             onClick={() => setPage("home")}
             className="flex items-center space-x-2 px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded-md transition-colors"
