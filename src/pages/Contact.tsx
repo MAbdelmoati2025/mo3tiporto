@@ -59,6 +59,7 @@ const Contact = () => {
           </Heading>
           <Text mt={2} color="gray.400">
             ابعتلنا رسالتك واحنا هنرد عليك في أسرع وقت
+            ادخل بياناتك
           </Text>
         </Box>
 
