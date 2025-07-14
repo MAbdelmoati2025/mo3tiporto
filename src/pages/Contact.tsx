@@ -23,17 +23,20 @@ const Contact = () => {
   const toast = useToast();
   const [loading, setLoading] = useState(false);
 
-  const initialValues: FormValues = {
+  const initialValues = {
     name: "",
     email: "",
-    subject: "",
     message: "",
   };
 
-  const handleSubmit = async (values: FormValues, { resetForm }: any) => {
+  const handleSubmit = async (values: any, { resetForm }: any) => {
     setLoading(true);
     try {
-      const result = await sendEmail(values);
+      const result = await sendEmail({
+        ...values,
+        subject: "codex client", // subject ثابت
+      });
+
       if (result.status === 200) {
         toast({
           title: "تم الإرسال",
@@ -60,7 +63,7 @@ const Contact = () => {
   return (
     <Box minH="100vh" p={{ base: 4, md: 10 }} bg="gray.900" color="white">
       <VStack spacing={10} align="start" maxW="800px" mx="auto">
-        {/* Contact Info Card */}
+        {/* Contact Info */}
         <Box
           bg="gray.800"
           p={6}
@@ -121,17 +124,6 @@ const Contact = () => {
                     name="email"
                     placeholder="الإيميل بتاعك"
                     value={values.email}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    bg="gray.800"
-                    border="1px solid"
-                    borderColor="gray.700"
-                    _focus={{ borderColor: "#0BCEAF" }}
-                  />
-                  <Input
-                    name="subject"
-                    placeholder="عنdوان الرسالة"
-                    value={values.subject}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     bg="gray.800"
