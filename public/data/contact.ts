@@ -17,7 +17,7 @@ export const contactInfo = [
   {
     icon: FaWhatsapp,
     label: "WhatsApp",
-    value: "+20 14884327",
+    value: "+20 1022075809",
   },
   {
     icon: FaGithub,
