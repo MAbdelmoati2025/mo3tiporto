@@ -48,7 +48,6 @@ export const homeData = {
   social: [
     {
       Icon: FaGithub,
-      Link: "https://github.com/KareemEhab",
     },
     {
       Icon: FaFacebook,
