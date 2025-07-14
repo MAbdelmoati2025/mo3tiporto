@@ -158,7 +158,7 @@ const Contact = () => {
                     color="white"
                     _hover={{ bg: "#09a88d" }}
                     isLoading={loading}
-                    loadingText="جار الإsرسال..."
+                    loadingText="جار الإرسال...."
                     alignSelf="flex-start"
                   >
                     إرسال الرسالة
