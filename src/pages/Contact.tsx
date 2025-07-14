@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Send, Mail, User, MessageCircle, ExternalLink } from "lucide-react";
+import { Send, Mail, User, MessageCircle, ExternalLink, Phone } from "lucide-react";
 
 const Contact = ({ setPage }) => {
   useEffect(() => {
@@ -31,7 +31,7 @@ const Contact = ({ setPage }) => {
       {/* Header */}
       <div className="flex items-center justify-between p-6 border-b border-slate-700">
         <div className="flex items-center space-x-4">
-          <h1 className="text-2xl font-bold">contgact.ts</h1>
+          <h1 className="text-2xl font-bold">contact.ts</h1>
           <button 
             onClick={() => setPage("home")}
             className="flex items-center space-x-2 px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded-md transition-colors"
@@ -42,66 +42,105 @@ const Contact = ({ setPage }) => {
         </div>
       </div>
 
-      {/* Form Container */}
+      {/* Contact Info */}
       <div className="max-w-2xl mx-auto p-6">
+        <div className="bg-slate-800 rounded-lg border border-slate-700 p-6 mb-6">
+          <h2 className="text-xl font-semibold text-cyan-400 mb-4">Contact Information</h2>
+          <div className="space-y-3 text-slate-300">
+            <div className="flex items-center space-x-3">
+              <User className="w-5 h-5 text-cyan-400" />
+              <span>Ahmed Mohamed</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Mail className="w-5 h-5 text-cyan-400" />
+              <span>ahmed@example.com</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Phone className="w-5 h-5 text-cyan-400" />
+              <span>+20 123 456 7890</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Form Container */}
         <div className="bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
           {/* Form Header */}
           <div className="bg-slate-900 px-4 py-3 border-b border-slate-700">
-            <h2 className="text-lg font-semibold text-cyan-400">Contact Form</h2>
+            <h2 className="text-lg font-semibold text-cyan-400">Send Message</h2>
           </div>
 
           {/* Form Content */}
           <div className="p-6 space-y-4">
             {/* Name */}
-            <div className="flex items-center space-x-4">
-              <User className="w-5 h-5 text-slate-400" />
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your name"
-                className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-              />
+            <div className="space-y-2">
+              <label className="block text-slate-300 font-medium">Name</label>
+              <div className="flex items-center space-x-3">
+                <div className="bg-slate-700 p-2 rounded">
+                  <User className="w-5 h-5 text-cyan-400" />
+                </div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your name"
+                  className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                />
+              </div>
             </div>
 
             {/* Email */}
-            <div className="flex items-center space-x-4">
-              <Mail className="w-5 h-5 text-slate-400" />
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="your@email.com"
-                className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-              />
+            <div className="space-y-2">
+              <label className="block text-slate-300 font-medium">Email</label>
+              <div className="flex items-center space-x-3">
+                <div className="bg-slate-700 p-2 rounded">
+                  <Mail className="w-5 h-5 text-cyan-400" />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="your@email.com"
+                  className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                />
+              </div>
             </div>
 
             {/* Subject */}
-            <div className="flex items-center space-x-4">
-              <MessageCircle className="w-5 h-5 text-slate-400" />
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="Subject"
-                className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-              />
+            <div className="space-y-2">
+              <label className="block text-slate-300 font-medium">Subject</label>
+              <div className="flex items-center space-x-3">
+                <div className="bg-slate-700 p-2 rounded">
+                  <MessageCircle className="w-5 h-5 text-cyan-400" />
+                </div>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Subject"
+                  className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                />
+              </div>
             </div>
 
             {/* Message */}
-            <div className="flex items-start space-x-4">
-              <MessageCircle className="w-5 h-5 text-slate-400 mt-2" />
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Your message..."
-                rows={4}
-                className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 resize-none"
-              />
+            <div className="space-y-2">
+              <label className="block text-slate-300 font-medium">Message</label>
+              <div className="flex items-start space-x-3">
+                <div className="bg-slate-700 p-2 rounded">
+                  <MessageCircle className="w-5 h-5 text-cyan-400" />
+                </div>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Your message..."
+                  rows={4}
+                  className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 resize-none"
+                />
+              </div>
             </div>
 
             {/* Submit Button */}
