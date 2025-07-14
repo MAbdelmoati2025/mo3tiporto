@@ -1,167 +1,150 @@
+import {
+  Box,
+  Button,
+  useToast,
+  HStack,
+  VStack,
+  useBreakpointValue,
+} from "@chakra-ui/react";
+import { Formik, Form } from "formik";
 import { useState, useEffect } from "react";
-import { Send, Mail, User, MessageCircle, ExternalLink, Phone } from "lucide-react";
+import { validationSchema, FormValues } from "../utils/validation";
+import { sendEmail } from "../utils/sendEmail";
 
-const Contact = ({ setPage }) => {
+import ContactDetails from "../components/Contact/ContactDetails";
+import ContactCodeLines from "../components/Contact/ContactCodeLines";
+import ContactForm from "../components/Contact/ContactForm";
+
+interface Props {
+  setPage: (page: string) => void;
+}
+
+const Contact = ({ setPage }: Props) => {
   useEffect(() => {
     setPage("contact.ts");
   }, []);
 
-  const [formData, setFormData] = useState({
+  const toast = useToast();
+  const [totalLines, setTotalLines] = useState(14);
+  const [messageLines, setMessageLines] = useState(1);
+  const isMobile = useBreakpointValue({ base: true, md: false });
+  const [loading, setLoading] = useState(false);
+
+  const initialValues: FormValues = {
     name: "",
     email: "",
     subject: "",
     message: "",
-  });
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (values: FormValues, { resetForm }: any) => {
     setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setLoading(false);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    try {
+      const result = await sendEmail(values);
+      if (result.status === 200)
+        toast({
+          title: "Message Sent",
+          description: "Your message has been sent successfully!",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+
+      resetForm();
+      setMessageLines(1);
+    } catch (error) {
+      toast({
+        title: "Error Sending Message",
+        description: "There was a problem sending your message.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
+  useEffect(() => {
+    setTotalLines(13 + messageLines);
+  }, [messageLines]);
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white font-mono">
-      {/* Header */}
-      <div className="flex items-center justify-between p-6 border-b border-slate-700">
-        <div className="flex items-center space-x-4">
-          <h1 className="text-2xl font-bold">contact.ts</h1>
-          <button 
-            onClick={() => setPage("home")}
-            className="flex items-center space-x-2 px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded-md transition-colors"
-          >
-            <ExternalLink className="w-4 h-4" />
-            <span>Go to Page</span>
-          </button>
-        </div>
-      </div>
+    <Box minHeight="100%" width="100%">
+      <Box
+        w="full"
+        borderRadius="md"
+        fontFamily="monospace"
+        overflowX="hidden"
+        pr="1rem"
+      >
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          {({ values, handleChange, handleBlur, errors, touched }) => {
+            const errorMap: Record<number, string> = {};
+            if (errors.name && touched.name) errorMap[10] = errors.name;
+            if (errors.email && touched.email) errorMap[11] = errors.email;
+            if (errors.subject && touched.subject)
+              errorMap[12] = errors.subject;
+            if (errors.message && touched.message)
+              errorMap[13] = errors.message;
 
-      {/* Contact Info */}
-      <div className="max-w-2xl mx-auto p-6">
-        <div className="bg-slate-800 rounded-lg border border-slate-700 p-6 mb-6">
-          <h2 className="text-xl font-semibold text-cyan-400 mb-4">Contact Information</h2>
-          <div className="space-y-3 text-slate-300">
-            <div className="flex items-center space-x-3">
-              <User className="w-5 h-5 text-cyan-400" />
-              <span>Ahmed Mohamed</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Mail className="w-5 h-5 text-cyan-400" />
-              <span>ahmed@example.com</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Phone className="w-5 h-5 text-cyan-400" />
-              <span>+20 123 456 7890</span>
-            </div>
-          </div>
-        </div>
+            return (
+              <Form>
+                <VStack
+                  align="flex-start"
+                  w="full"
+                  justify={{ md: "space-between" }}
+                >
+                  <HStack
+                    align="flex-start"
+                    spacing={2}
+                    w="full"
+                    overflowX={isMobile ? "auto" : "visible"}
+                  >
+                    <ContactCodeLines
+                      totalLines={totalLines}
+                      errorLines={Object.keys(errorMap).map(Number)}
+                      errorMessages={errorMap}
+                    />
 
-        {/* Form Container */}
-        <div className="bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
-          {/* Form Header */}
-          <div className="bg-slate-900 px-4 py-3 border-b border-slate-700">
-            <h2 className="text-lg font-semibold text-cyan-400">Send Message</h2>
-          </div>
+                    <VStack
+                      align="stretch"
+                      w="full"
+                      minW={isMobile ? "300px" : "auto"}
+                    >
+                      <ContactDetails />
+                      <ContactForm
+                        values={values}
+                        handleChange={handleChange}
+                        handleBlur={handleBlur}
+                        setMessageLines={setMessageLines}
+                      />
+                    </VStack>
+                  </HStack>
 
-          {/* Form Content */}
-          <div className="p-6 space-y-4">
-            {/* Name */}
-            <div className="space-y-2">
-              <label className="block text-slate-300 font-medium">Name</label>
-              <div className="flex items-center space-x-3">
-                <div className="bg-slate-700 p-2 rounded">
-                  <User className="w-5 h-5 text-cyan-400" />
-                </div>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                />
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="space-y-2">
-              <label className="block text-slate-300 font-medium">Email</label>
-              <div className="flex items-center space-x-3">
-                <div className="bg-slate-700 p-2 rounded">
-                  <Mail className="w-5 h-5 text-cyan-400" />
-                </div>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                />
-              </div>
-            </div>
-
-            {/* Subject */}
-            <div className="space-y-2">
-              <label className="block text-slate-300 font-medium">Subject</label>
-              <div className="flex items-center space-x-3">
-                <div className="bg-slate-700 p-2 rounded">
-                  <MessageCircle className="w-5 h-5 text-cyan-400" />
-                </div>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Subject"
-                  className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                />
-              </div>
-            </div>
-
-            {/* Message */}
-            <div className="space-y-2">
-              <label className="block text-slate-300 font-medium">Message</label>
-              <div className="flex items-start space-x-3">
-                <div className="bg-slate-700 p-2 rounded">
-                  <MessageCircle className="w-5 h-5 text-cyan-400" />
-                </div>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Your message..."
-                  rows={4}
-                  className="flex-1 bg-slate-700 border border-slate-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 resize-none"
-                />
-              </div>
-            </div>
-
-            {/* Submit Button */}
-            <div className="flex justify-end pt-4">
-              <button
-                onClick={handleSubmit}
-                disabled={loading}
-                className="flex items-center space-x-2 bg-cyan-600 hover:bg-cyan-700 disabled:bg-slate-600 px-6 py-2 rounded transition-colors"
-              >
-                {loading ? (
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                ) : (
-                  <Send className="w-4 h-4" />
-                )}
-                <span>{loading ? "Sending..." : "Send Message"}</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                  <Button
+                    type="submit"
+                    bg="#0BCEAF"
+                    color="white"
+                    _hover={{ bg: "#09a88d" }}
+                    mt={4}
+                    ml={4}
+                    isLoading={loading}
+                    loadingText="Sending..."
+                  >
+                    Send Message
+                  </Button>
+                </VStack>
+              </Form>
+            );
+          }}
+        </Formik>
+      </Box>
+    </Box>
   );
 };
 
