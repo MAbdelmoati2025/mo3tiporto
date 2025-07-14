@@ -3,29 +3,17 @@ import {
   Button,
   useToast,
   VStack,
-  useBreakpointValue,
   Heading,
   Text,
 } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { validationSchema, FormValues } from "../utils/validation";
 import { sendEmail } from "../utils/sendEmail";
-
-import ContactDetails from "../components/Contact/ContactDetails";
 import ContactForm from "../components/Contact/ContactForm";
 
-interface Props {
-  setPage: (page: string) => void;
-}
-
-const Contact = ({ setPage }: Props) => {
-  useEffect(() => {
-    setPage("contact.ts");
-  }, []);
-
+const Contact = () => {
   const toast = useToast();
-  const [messageLines, setMessageLines] = useState(1);
   const [loading, setLoading] = useState(false);
 
   const initialValues: FormValues = {
@@ -41,19 +29,18 @@ const Contact = ({ setPage }: Props) => {
       const result = await sendEmail(values);
       if (result.status === 200) {
         toast({
-          title: "Message Sent",
-          description: "Your message has been sent successfully!",
+          title: "تم الإرسال",
+          description: "تم إرسال رسالتك بنجاح، هنرد عليك قريب.",
           status: "success",
           duration: 3000,
           isClosable: true,
         });
         resetForm();
-        setMessageLines(1);
       }
     } catch (error) {
       toast({
-        title: "Error Sending Message",
-        description: "There was a problem sending your message.",
+        title: "حصل خطأ",
+        description: "في مشكلة أثناء إرسال الرسالة، حاول تاني.",
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -65,13 +52,13 @@ const Contact = ({ setPage }: Props) => {
 
   return (
     <Box minH="100vh" p={{ base: 4, md: 10 }} bg="gray.900" color="white">
-      <VStack spacing={8} align="start" maxW="800px" mx="auto">
+      <VStack spacing={6} align="start" maxW="600px" mx="auto">
         <Box>
-          <Heading fontSize="3xl" color="#0BCEAF">
-            Let's Get in Touch
+          <Heading fontSize="2xl" color="#0BCEAF">
+            تواصل معانا
           </Heading>
-          <Text fontSize="md" mt={2} color="gray.400">
-            Feel free to drop me a message below.
+          <Text mt={2} color="gray.400">
+            ابعتلنا رسالتك واحنا هنرد عليك في أسرع وقت.
           </Text>
         </Box>
 
@@ -82,25 +69,24 @@ const Contact = ({ setPage }: Props) => {
         >
           {({ values, handleChange, handleBlur }) => (
             <Form style={{ width: "100%" }}>
-              <VStack spacing={6} align="stretch">
-                <ContactDetails />
+              <VStack spacing={4}>
                 <ContactForm
                   values={values}
                   handleChange={handleChange}
                   handleBlur={handleBlur}
-                  setMessageLines={setMessageLines}
+                  setMessageLines={() => {}}
                 />
                 <Button
                   type="submit"
-                  size="lg"
+                  size="md"
                   bg="#0BCEAF"
                   color="white"
                   _hover={{ bg: "#09a88d" }}
                   isLoading={loading}
-                  loadingText="Sending..."
+                  loadingText="جار الإرسال..."
                   alignSelf="flex-start"
                 >
-                  Send Message
+                  إرسال الرسالة
                 </Button>
               </VStack>
             </Form>
