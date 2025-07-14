@@ -48,23 +48,11 @@ export const projects = [
     Demo: "https://kanban-task-management-app-jet.vercel.app/",
   },
   {
-    ImageURL: "/assets/project-audiophile.webp",
-    Title: "Audiophile Ecommerce Web Application",
-    Description:
-      "A full-stack ecommerce web application for electornic audio devices.",
+    
     Technologies: [
-      "node",
-      "express",
-      "react",
-      "mongodb",
-      "typescript",
-      "chakra-ui",
-      "html",
-      "css",
-      "responsive",
+      
     ],
-    Source: "https://github.com/KareemEhab/audiophile-ecommerce-webapp",
-    Demo: "https://audiophile-ecommerce-webapp.vercel.app/",
+
   },
   {
     ImageURL: "/assets/project-recipepage.webp",
