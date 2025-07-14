@@ -30,7 +30,6 @@ export const homeData = {
   ],
   education: [
     {
-      Icon: FaGithub,
     },
     {
       Icon: FaFacebook,
