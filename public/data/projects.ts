@@ -18,15 +18,7 @@ export const projects = [
   {
     
     Technologies: [
-      "angular",
-      "typescript",
-      "tailwind",
-      "ngxs",
-      "responsive",
-      "node",
-      "express",
-      "mongodb",
-      "javascript",
+      
     ],
     Source: "https://github.com/KareemEhab/game-hub-frontend",
     Demo: "https://game-hub-iti.netlify.app/",
