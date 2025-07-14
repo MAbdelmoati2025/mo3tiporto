@@ -1,8 +1,6 @@
 import { IoMdMail } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt, FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaUniversity } from "react-icons/fa";
-import { FaGraduationCap } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
@@ -28,18 +26,7 @@ export const homeData = {
       Link: "tel:+201022075809",
     },
   ],
-  education: [
-    {
-      Icon: FaUniversity,
-      Label: "Ain Shams University",
-      Link: "https://www.asu.edu.eg/",
-    },
-    {
-      Icon: FaGraduationCap,
-      Label: "Bachelor's Degree in Computer Science",
-      Link: "https://cis.asu.edu.eg/",
-    },
-  ],
+ 
   social: [
     {
       Icon: FaGithub,
