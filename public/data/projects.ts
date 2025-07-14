@@ -17,23 +17,7 @@ export const projects = [
     
   },
   {
-    ImageURL: "/assets/project-gamehub.webp",
-    Title: "Game Hub",
-    Description:
-      "A full-stack e-commerce platform for buying and viewing games",
-    Technologies: [
-      "angular",
-      "typescript",
-      "tailwind",
-      "ngxs",
-      "responsive",
-      "node",
-      "express",
-      "mongodb",
-      "javascript",
-    ],
-    Source: "https://github.com/KareemEhab/game-hub-frontend",
-    Demo: "https://game-hub-iti.netlify.app/",
+   
   },
   {
     ImageURL: "/assets/project-vscode.webp",
