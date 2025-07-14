@@ -55,11 +55,6 @@ export const projects = [
 
   },
   {
-    ImageURL: "/assets/project-recipepage.webp",
-    Title: "Recipe Page",
-    Description: "A simple recipe page for making an omelette.",
-    Technologies: ["html", "css", "responsive"],
-    Source: "https://github.com/KareemEhab/recipe-page-main",
-    Demo: "https://recipe-page-main-phi.vercel.app/",
+    
   },
 ];
