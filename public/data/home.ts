@@ -10,10 +10,11 @@ export const homeData = {
   // To use your own photo, just place it in /public/assets and write the link as I did: eg: /assets/my_image.jpg
   // Of course it's best to convert your image file type to webp for better performance on the web!
   // The links are optional
-z  contactInfo: [
+  myImage: "/assets/WhatsApp Image 2025-06-22 at 17.04.14_e8e43668.jpg",
+  contactInfo: [
     {
       Icon: IoMdMail,
-      Label: "Mohamed.a.abdelmoati2020@gmail.com",
+      Label: "kareem.e.hamouda@gmail.com",
       Link: "/contact", // This refers to the Contact page in the website, you can change it to whatever you like
     },
     {
@@ -23,19 +24,19 @@ z  contactInfo: [
     },
     {
       Icon: FaPhoneAlt,
-      Label: "+201014884327",
-      Link: "tel:+201014884327",
+      Label: "+20 115 111 9085",
+      Link: "tel:+201151119085",
     },
   ],
   education: [
     {
       Icon: FaUniversity,
-      Label: "Helwan  University",
+      Label: "Ain Shams University",
       Link: "https://www.asu.edu.eg/",
     },
     {
       Icon: FaGraduationCap,
-      Label: "Bachelor's Degree in Engineering",
+      Label: "Bachelor's Degree in Computer Science",
       Link: "https://cis.asu.edu.eg/",
     },
   ],
@@ -43,22 +44,22 @@ z  contactInfo: [
     {
       Icon: FaGithub,
       Label: "GitHub",
-      Link: "https://github.com/MAbdelmoati2025",
+      Link: "https://github.com/KareemEhab",
     },
     {
       Icon: FaLinkedin,
       Label: "LinkedIn",
-      Link: "https://www.linkedin.com/in/mohamed-a-abdelmoati-229688299",
+      Link: "https://www.linkedin.com/in/kareem-hamouda/",
     },
     {
       Icon: FaFacebook,
       Label: "Facebook",
-      Link: "https://www.facebook.com/MohamedAhmedAbdelmoati1752002/",
+      Link: "https://www.facebook.com/kareem.ehab.37",
     },
     {
       Icon: FaInstagram,
       Label: "Instagram",
-      Link: "https://www.instagram.com/mohamed.a.abdelmoati_7/",
+      Link: "https://www.instagram.com/kareem.ehabz/",
     },
   ],
 };
