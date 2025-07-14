@@ -28,6 +28,18 @@ export const homeData = {
       Link: "tel:+201022075809",
     },
   ],
+  education: [
+    {
+      Icon: FaUniversity,
+      Label: "Ain Shams University",
+      Link: "https://www.asu.edu.eg/",
+    },
+    {
+      Icon: FaGraduationCap,
+      Label: "Bachelor's Degree in Computer Science",
+      Link: "https://cis.asu.edu.eg/",
+    },
+  ],
   social: [
     {
       Icon: FaGithub,
