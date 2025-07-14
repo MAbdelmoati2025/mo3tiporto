@@ -1,9 +1,9 @@
 export const aboutMe = {
   description: [
-    "Senior Communication and Electronics Engineering Student ",
+    "CodeX is a coding academy offering tailored courses to help you master programming and thrive in the tech world.",
   ],
-  cvPath: "/assets/CV.pdf", // Upload your own CV in /public/assets as CV.pdf
-  cvFileNameAfterDownload: "Kareem Hamouda CV.pdf", // This is what the name of the file is going to be when downloaded
+  cvPath: "/assets/CodeX Arduino Course ..pdf", // Upload your own CV in /public/assets as CV.pdf
+  cvFileNameAfterDownload: "CodeX Course.pdf", // This is what the name of the file is going to be when downloaded
 };
 
 export const technicalSkills: Record<string, string[]> = {
