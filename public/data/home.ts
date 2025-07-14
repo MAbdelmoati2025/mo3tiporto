@@ -29,11 +29,7 @@ export const homeData = {
     },
   ],
   education: [
-    {
-      Icon: FaUniversity,
-      Label: "Ain Shams University",
-      Link: "https://www.asu.edu.eg/",
-    },
+    
     
   ],
   social: [
