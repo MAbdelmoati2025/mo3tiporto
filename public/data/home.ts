@@ -49,7 +49,6 @@ export const homeData = {
   ],
 social: [
   {
-      Icon: FaTiktok,
       Label: "Thank You",
     },
   ],
