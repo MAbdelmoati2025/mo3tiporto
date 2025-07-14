@@ -23,20 +23,17 @@ const Contact = () => {
   const toast = useToast();
   const [loading, setLoading] = useState(false);
 
-  const initialValues = {
+  const initialValues: FormValues = {
     name: "",
     email: "",
+    subject: "",
     message: "",
   };
 
-  const handleSubmit = async (values: any, { resetForm }: any) => {
+  const handleSubmit = async (values: FormValues, { resetForm }: any) => {
     setLoading(true);
     try {
-      const result = await sendEmail({
-        ...values,
-        subject: "codex client", // هنا حطينا الموضوع ثابت
-      });
-
+      const result = await sendEmail(values);
       if (result.status === 200) {
         toast({
           title: "تم الإرسال",
@@ -131,6 +128,17 @@ const Contact = () => {
                     borderColor="gray.700"
                     _focus={{ borderColor: "#0BCEAF" }}
                   />
+                  <Input
+                    name="subject"
+                    placeholder="عنdوان الرسالة"
+                    value={values.subject}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    bg="gray.800"
+                    border="1px solid"
+                    borderColor="gray.700"
+                    _focus={{ borderColor: "#0BCEAF" }}
+                  />
                   <Textarea
                     name="message"
                     placeholder="الرسالة"
@@ -153,7 +161,7 @@ const Contact = () => {
                     loadingText="جار الإرسال..."
                     alignSelf="flex-start"
                   >
-                    إرسال 
+                    إرسال الرسالة
                   </Button>
                 </VStack>
               </Form>
