@@ -24,7 +24,7 @@ export const homeData = {
     },
     {
       Icon: FaPhoneAlt,
-      Label: "+20 115 111 9085",
+      Label: "+20 102 207 5809",
       Link: "tel:+201151119085",
     },
   ],
