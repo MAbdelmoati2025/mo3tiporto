@@ -31,8 +31,6 @@ export const homeData = {
   education: [
     {
       Icon: FaGithub,
-      Label: "GitHub",
-      Link: "https://github.com/KareemEhab",
     },
     {
       Icon: FaFacebook,
