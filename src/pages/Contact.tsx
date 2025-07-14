@@ -1,142 +1,100 @@
 import {
-  Box,
-  Button,
-  useToast,
-  HStack,
+  FormControl,
+  Input,
+  Textarea,
   VStack,
-  useBreakpointValue,
-  Heading,
   Text,
 } from "@chakra-ui/react";
-import { Formik, Form } from "formik";
-import { useState, useEffect } from "react";
-import { validationSchema, FormValues } from "../utils/validation";
-import { sendEmail } from "../utils/sendEmail";
-
-import ContactDetails from "../components/Contact/ContactDetails";
-import ContactCodeLines from "../components/Contact/ContactCodeLines";
-import ContactForm from "../components/Contact/ContactForm";
 
 interface Props {
-  setPage: (page: string) => void;
+  values: {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+  };
+  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  handleBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  setMessageLines: (lines: number) => void;
 }
 
-const Contact = ({ setPage }: Props) => {
-  useEffect(() => {
-    setPage("contact.ts");
-  }, []);
-
-  const toast = useToast();
-  const [totalLines, setTotalLines] = useState(14);
-  const [messageLines, setMessageLines] = useState(1);
-  const isMobile = useBreakpointValue({ base: true, md: false });
-  const [loading, setLoading] = useState(false);
-
-  const initialValues: FormValues = {
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  };
-
-  const handleSubmit = async (values: FormValues, { resetForm }: any) => {
-    setLoading(true);
-    try {
-      const result = await sendEmail(values);
-      if (result.status === 200) {
-        toast({
-          title: "Message Sent",
-          description: "Your message has been sent successfully!",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-        });
-        resetForm();
-        setMessageLines(1);
-      }
-    } catch (error) {
-      toast({
-        title: "Error Sending Message",
-        description: "There was a problem sending your message.",
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    setTotalLines(13 + messageLines);
-  }, [messageLines]);
-
+const ContactForm = ({ values, handleChange, handleBlur, setMessageLines }: Props) => {
   return (
-    <Box minH="100vh" p={{ base: 4, md: 10 }} bg="gray.900" color="white">
-      <VStack spacing={8} align="start" maxW="800px" mx="auto">
-        <Box>
-          <Heading fontSize="3xl" color="#0BCEAF">
-            Let's Get in Touch
-          </Heading>
-          <Text fontSize="md" mt={2} color="gray.400">
-            Feel free to drop me a message below.
-          </Text>
-        </Box>
+    <VStack spacing={4} w="full">
+      {/* Name */}
+      <FormControl>
+        <Input
+          name="name"
+          placeholder="Your Name"
+          value={values.name}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          variant="filled"
+          size="md"
+          bg="gray.700"
+          _placeholder={{ color: "gray.400" }}
+          focusBorderColor="#0BCEAF"
+          borderRadius="md"
+        />
+      </FormControl>
 
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
-          {({ values, handleChange, handleBlur, errors, touched }) => {
-            const errorMap: Record<number, string> = {};
-            if (errors.name && touched.name) errorMap[10] = errors.name;
-            if (errors.email && touched.email) errorMap[11] = errors.email;
-            if (errors.subject && touched.subject)
-              errorMap[12] = errors.subject;
-            if (errors.message && touched.message)
-              errorMap[13] = errors.message;
+      {/* Email */}
+      <FormControl>
+        <Input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          variant="filled"
+          size="md"
+          bg="gray.700"
+          _placeholder={{ color: "gray.400" }}
+          focusBorderColor="#0BCEAF"
+          borderRadius="md"
+        />
+      </FormControl>
 
-            return (
-              <Form style={{ width: "100%" }}>
-                <VStack spacing={6} align="stretch">
-                  <ContactDetails />
+      {/* Subject */}
+      <FormControl>
+        <Input
+          name="subject"
+          placeholder="Subject"
+          value={values.subject}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          variant="filled"
+          size="md"
+          bg="gray.700"
+          _placeholder={{ color: "gray.400" }}
+          focusBorderColor="#0BCEAF"
+          borderRadius="md"
+        />
+      </FormControl>
 
-                  <HStack align="flex-start" spacing={4} w="full">
-                    <ContactCodeLines
-                      totalLines={totalLines}
-                      errorLines={Object.keys(errorMap).map(Number)}
-                      errorMessages={errorMap}
-                    />
-
-                    <ContactForm
-                      values={values}
-                      handleChange={handleChange}
-                      handleBlur={handleBlur}
-                      setMessageLines={setMessageLines}
-                    />
-                  </HStack>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    bg="#0BCEAF"
-                    color="white"
-                    _hover={{ bg: "#09a88d" }}
-                    isLoading={loading}
-                    loadingText="Sending..."
-                    alignSelf="flex-start"
-                  >
-                    Send Message
-                  </Button>
-                </VStack>
-              </Form>
-            );
+      {/* Message */}
+      <FormControl>
+        <Textarea
+          name="message"
+          placeholder="Your Message"
+          value={values.message}
+          onChange={(e) => {
+            handleChange(e);
+            setMessageLines(e.target.value.split("\n").length);
           }}
-        </Formik>
-      </VStack>
-    </Box>
+          onBlur={handleBlur}
+          rows={4}
+          variant="filled"
+          bg="gray.700"
+          _placeholder={{ color: "gray.400" }}
+          focusBorderColor="#0BCEAF"
+          borderRadius="md"
+          resize="none"
+        />
+      </FormControl>
+    </VStack>
   );
 };
 
-export default Contact;
+export default ContactForm;
