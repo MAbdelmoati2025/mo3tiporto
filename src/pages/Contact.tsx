@@ -26,7 +26,7 @@ const Contact = () => {
   const initialValues: FormValues = {
     name: "",
     email: "",
-    subject: "",
+    subject: "CodeX Client",
     message: "",
   };
 
@@ -121,17 +121,6 @@ const Contact = () => {
                     name="email"
                     placeholder="الإيميل بتاعك"
                     value={values.email}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    bg="gray.800"
-                    border="1px solid"
-                    borderColor="gray.700"
-                    _focus={{ borderColor: "#0BCEAF" }}
-                  />
-                  <Input
-                    name="subject"
-                    placeholder="عنوان الرسالة"
-                    value={values.subject}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     bg="gray.800"
