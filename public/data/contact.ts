@@ -20,11 +20,6 @@ export const contactInfo = [
     value: "+20 1022075809",
   },
   {
-    icon: FaLinkedin,
-    label: "LinkedIn",
-    value: "https://www.linkedin.com/in/mohamed-a-abdelmoati-229688299",
-  },
-  {
     icon: FaFacebook,
     label: "Facebook",
     value: "https://www.facebook.com/MohamedAhmedAbdelmoati1752002/",
