@@ -1,7 +1,5 @@
 import {
   FaPhoneAlt,
-  FaGithub,
-  FaLinkedin,
   FaFacebook,
   FaInstagram,
   FaWhatsapp,
