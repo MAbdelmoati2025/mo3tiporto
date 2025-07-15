@@ -8,7 +8,7 @@ export const sendEmail = async (values: {
 }) => {
   const { name, email, subject, message } = values;
 
-  return await fetch("https://email-sender-zhby.vercel.app/", {
+  return await fetch(https://capable-marigold-369369.netlify.app/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
